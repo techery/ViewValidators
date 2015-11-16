@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.validations;
 
 import org.immutables.value.Value;
 

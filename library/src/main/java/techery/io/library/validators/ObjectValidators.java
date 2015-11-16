@@ -1,10 +1,12 @@
-package techery.io.library;
+package techery.io.library.validators;
 
 
 import java.util.List;
 
 import rx.Observable;
 import rx.functions.Func1;
+import techery.io.library.results.ValidationResult;
+
 
 public class ObjectValidators {
 

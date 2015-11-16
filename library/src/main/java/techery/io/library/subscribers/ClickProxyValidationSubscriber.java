@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.subscribers;
 
 import android.util.Log;
 import android.view.View;
@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 
 import rx.functions.Action1;
 import rx.functions.Action2;
+import techery.io.library.R;
 
 public class ClickProxyValidationSubscriber extends ValidatorSubscriber {
 

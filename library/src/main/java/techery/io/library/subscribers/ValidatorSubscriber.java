@@ -1,10 +1,11 @@
-package techery.io.library;
+package techery.io.library.subscribers;
 
 import android.view.View;
 
 import rx.Subscriber;
 import rx.functions.Action1;
 import rx.functions.Action2;
+import techery.io.library.results.ValidationResult;
 
 public class ValidatorSubscriber extends Subscriber<ValidationResult> {
     public final Action1<View> onSuccess;

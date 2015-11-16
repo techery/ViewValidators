@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.results;
 
 import android.support.annotation.Nullable;
 import android.view.View;

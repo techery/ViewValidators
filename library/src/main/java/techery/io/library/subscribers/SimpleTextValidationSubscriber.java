@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.subscribers;
 
 import android.support.annotation.StringRes;
 import android.view.View;

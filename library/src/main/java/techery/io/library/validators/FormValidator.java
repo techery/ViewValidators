@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.validators;
 
 import android.view.View;
 
@@ -8,6 +8,7 @@ import java.util.List;
 import rx.Observable;
 import rx.functions.Func1;
 import rx.subjects.PublishSubject;
+import techery.io.library.results.ValidationResult;
 
 public class FormValidator {
 

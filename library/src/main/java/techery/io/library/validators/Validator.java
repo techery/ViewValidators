@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.validators;
 
 import org.immutables.value.Value;
 
@@ -6,8 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.functions.Func1;
+import techery.io.library.results.ImmutableValidationResult;
+import techery.io.library.results.ValidationResult;
 
-import static techery.io.library.ValidationResult.ValidationStatus.ERROR;
+import static techery.io.library.results.ValidationResult.ValidationStatus.ERROR;
 
 public abstract class Validator<T> {
     public abstract Func1<T, ValidationResult> predicate();

@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.validators;
 
 import com.jakewharton.rxbinding.widget.TextViewTextChangeEvent;
 
@@ -9,6 +9,9 @@ import java.util.concurrent.TimeUnit;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
+import techery.io.library.results.ValidationResult;
+
+
 
 @Value.Immutable
 public abstract class TextValidator extends Validator<TextViewTextChangeEvent> {

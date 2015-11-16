@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.validators;
 
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -8,14 +8,16 @@ import com.jakewharton.rxbinding.widget.TextViewTextChangeEvent;
 
 import java.util.List;
 
-import rx.functions.Func2;
-import rx.functions.FuncN;
-import techery.io.library.Validations.LengthValidation;
 import rx.Observable;
 import rx.functions.Func1;
+import rx.functions.Func2;
+import rx.functions.FuncN;
+import techery.io.library.validations.Validations.LengthValidation;
+import techery.io.library.predicates.ValidatorPredicate;
+import techery.io.library.results.ValidationResult;
 
-import static techery.io.library.ValidationResult.ValidationStatus.ERROR;
-import static techery.io.library.ValidationResult.ValidationStatus.SUCCESS;
+import static techery.io.library.results.ValidationResult.ValidationStatus.ERROR;
+import static techery.io.library.results.ValidationResult.ValidationStatus.SUCCESS;
 
 /** Validation factories of {@link Validator} class */
 public class WidgetValidators {

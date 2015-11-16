@@ -1,13 +1,14 @@
-package techery.io.library;
+package techery.io.library.predicates;
 
 import android.view.View;
 
 import java.lang.ref.WeakReference;
 
 import rx.functions.Func1;
+import techery.io.library.results.ValidationResult;
 
-import static techery.io.library.ValidationResult.ValidationStatus.ERROR;
-import static techery.io.library.ValidationResult.ValidationStatus.SUCCESS;
+import static techery.io.library.results.ValidationResult.ValidationStatus.ERROR;
+import static techery.io.library.results.ValidationResult.ValidationStatus.SUCCESS;
 
 public class ValidatorPredicate implements Func1<Boolean, ValidationResult> {
 

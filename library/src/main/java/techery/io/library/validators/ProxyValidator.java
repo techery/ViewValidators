@@ -1,4 +1,4 @@
-package techery.io.library;
+package techery.io.library.validators;
 
 import android.support.annotation.Nullable;
 
@@ -6,6 +6,8 @@ import org.immutables.value.Value;
 
 import rx.Observable;
 import rx.functions.Func1;
+import techery.io.library.results.ValidationResult;
+
 
 @Value.Immutable
 public abstract class ProxyValidator extends Validator<ValidationResult> {
