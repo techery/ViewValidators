@@ -50,8 +50,6 @@ public class LoginActivity extends AppCompatActivity{
     private void attemptLogin() {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-
-
     }
 
 }
