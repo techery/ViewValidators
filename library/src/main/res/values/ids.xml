@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="validation_key_passed" type="id" />
+    <item name="validation_key_click_set" type="id" />
+</resources>
