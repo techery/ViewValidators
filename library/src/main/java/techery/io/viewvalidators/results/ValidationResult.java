@@ -1,9 +1,11 @@
-package techery.io.library.results;
+package techery.io.viewvalidators.results;
 
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import org.immutables.value.Value;
+
+import techery.io.viewvalidators.results.ImmutableValidationResult;
 
 @Value.Immutable
 public abstract class ValidationResult {

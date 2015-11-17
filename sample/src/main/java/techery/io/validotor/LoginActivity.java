@@ -10,13 +10,13 @@ import android.widget.Toast;
 import com.jakewharton.rxbinding.widget.RxTextView;
 import com.trello.rxlifecycle.components.RxActivity;
 
-import techery.io.library.composers.InputValidatorComposer;
-import techery.io.library.results.ValidationResult;
-import techery.io.library.subscribers.SimpleEnabledValidationSubscriber;
-import techery.io.library.subscribers.SimpleTextValidationSubscriber;
-import techery.io.library.validations.Validations;
-import techery.io.library.validators.FormValidator;
-import techery.io.library.validators.WidgetValidators;
+import techery.io.viewvalidators.composers.InputValidatorComposer;
+import techery.io.viewvalidators.results.ValidationResult;
+import techery.io.viewvalidators.subscribers.SimpleEnabledValidationSubscriber;
+import techery.io.viewvalidators.subscribers.SimpleTextValidationSubscriber;
+import techery.io.viewvalidators.validations.Validations;
+import techery.io.viewvalidators.validators.FormValidator;
+import techery.io.viewvalidators.validators.WidgetValidators;
 
 
 public class LoginActivity extends RxActivity{

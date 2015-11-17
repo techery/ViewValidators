@@ -1,4 +1,4 @@
-package techery.io.library.validators;
+package techery.io.viewvalidators.validators;
 
 import com.jakewharton.rxbinding.widget.TextViewTextChangeEvent;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
-import techery.io.library.results.ValidationResult;
+import techery.io.viewvalidators.results.ValidationResult;
 
 
 

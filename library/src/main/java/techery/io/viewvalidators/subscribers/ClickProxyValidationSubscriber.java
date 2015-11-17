@@ -1,4 +1,4 @@
-package techery.io.library.subscribers;
+package techery.io.viewvalidators.subscribers;
 
 import android.util.Log;
 import android.view.View;

@@ -1,4 +1,4 @@
-package techery.io.library.composers;
+package techery.io.viewvalidators.composers;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;

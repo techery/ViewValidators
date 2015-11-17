@@ -1,8 +1,13 @@
-package techery.io.library.validations;
+package techery.io.viewvalidators.validations;
 
 import org.immutables.value.Value;
 
 import rx.functions.Func1;
+import techery.io.viewvalidators.validations.ImmutableELengthValidation;
+import techery.io.viewvalidators.validations.ImmutableGTELengthValidation;
+import techery.io.viewvalidators.validations.ImmutableGTLengthValidation;
+import techery.io.viewvalidators.validations.ImmutableLTELengthValidation;
+import techery.io.viewvalidators.validations.ImmutableLTLengthValidation;
 
 public class Validations {
     private Validations() {

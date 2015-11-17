@@ -1,4 +1,4 @@
-package techery.io.library.validators;
+package techery.io.viewvalidators.validators;
 
 import org.immutables.value.Value;
 
@@ -6,10 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.functions.Func1;
-import techery.io.library.results.ImmutableValidationResult;
-import techery.io.library.results.ValidationResult;
-
-import static techery.io.library.results.ValidationResult.ValidationStatus.ERROR;
+import techery.io.viewvalidators.results.ImmutableValidationResult;
+import techery.io.viewvalidators.results.ValidationResult;
 
 public abstract class Validator<T> {
     public abstract Func1<T, ValidationResult> predicate();
@@ -35,7 +33,7 @@ public abstract class Validator<T> {
             @Override
             public ValidationResult call(ValidationResult result) {
                 ValidationResult mappedResult = result;
-                if (result.status() == ERROR) {
+                if (result.status() == ValidationResult.ValidationStatus.ERROR) {
                     mappedResult = ImmutableValidationResult.copyOf(result)
                             .withError(new IllegalArgumentException(message));
                 }

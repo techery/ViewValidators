@@ -1,4 +1,4 @@
-package techery.io.library.validators;
+package techery.io.viewvalidators.validators;
 
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -12,12 +12,11 @@ import rx.Observable;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.functions.FuncN;
-import techery.io.library.validations.Validations.LengthValidation;
-import techery.io.library.predicates.ValidatorPredicate;
-import techery.io.library.results.ValidationResult;
-
-import static techery.io.library.results.ValidationResult.ValidationStatus.ERROR;
-import static techery.io.library.results.ValidationResult.ValidationStatus.SUCCESS;
+import techery.io.viewvalidators.predicates.ValidatorPredicate;
+import techery.io.viewvalidators.results.ValidationResult;
+import techery.io.viewvalidators.validators.ImmutableProxyValidator;
+import techery.io.viewvalidators.validators.ImmutableTextValidator;
+import techery.io.viewvalidators.validations.Validations;
 
 /** Validation factories of {@link Validator} class */
 public class WidgetValidators {
@@ -60,7 +59,7 @@ public class WidgetValidators {
         });
     }
 
-    public static TextValidator lengthValidator(Observable<TextViewTextChangeEvent> textSignal, final LengthValidation validation) {
+    public static TextValidator lengthValidator(Observable<TextViewTextChangeEvent> textSignal, final Validations.LengthValidation validation) {
         return textValidator(textSignal, new Func1<TextViewTextChangeEvent, ValidationResult>() {
             @Override
             public ValidationResult call(TextViewTextChangeEvent textEvent) {
@@ -76,7 +75,7 @@ public class WidgetValidators {
                     @Override
                     public ValidationResult call(TextViewTextChangeEvent textEvent1, TextViewTextChangeEvent textEvent2) {
                         boolean textEquals = textEvent1.text().toString().equals(textEvent2.text().toString());
-                        return ValidationResult.of(textEquals ? SUCCESS : ERROR, textEvent2.view());
+                        return ValidationResult.of(textEquals ? ValidationResult.ValidationStatus.SUCCESS : ValidationResult.ValidationStatus.ERROR, textEvent2.view());
                     }
                 })
         ).build();
@@ -107,7 +106,7 @@ public class WidgetValidators {
             @Override
             public ValidationResult call(TextViewTextChangeEvent TextViewTextChangeEvent) {
                 if (TextUtils.isEmpty(TextViewTextChangeEvent.text()))
-                    return ValidationResult.of(SUCCESS, TextViewTextChangeEvent.view());
+                    return ValidationResult.of(ValidationResult.ValidationStatus.SUCCESS, TextViewTextChangeEvent.view());
                 else return source.predicate().call(TextViewTextChangeEvent);
             }
         }).build();
@@ -119,7 +118,7 @@ public class WidgetValidators {
                     @Override
                     public ValidationResult call(Object... results) {
                         for (Object result : results) {
-                            if (((ValidationResult) result).status() == ERROR) {
+                            if (((ValidationResult) result).status() == ValidationResult.ValidationStatus.ERROR) {
                                 return ValidatorPredicate.resultFor(view, false);
                             }
                         }
@@ -135,7 +134,7 @@ public class WidgetValidators {
                     @Override
                     public ValidationResult call(Object... results) {
                         for (ValidationResult result : ((ValidationResult[]) results)) {
-                            if (result.status() == ERROR) {
+                            if (result.status() == ValidationResult.ValidationStatus.ERROR) {
                                 return result;
                             }
                         }
@@ -151,7 +150,7 @@ public class WidgetValidators {
                     @Override
                     public ValidationResult call(Object... results) {
                         for (Object result : results) {
-                            if (((ValidationResult) result).status() == SUCCESS) {
+                            if (((ValidationResult) result).status() == ValidationResult.ValidationStatus.SUCCESS) {
                                 return ValidatorPredicate.resultFor(view, true);
                             }
                         }
@@ -167,7 +166,7 @@ public class WidgetValidators {
                     @Override
                     public ValidationResult call(Object... results) {
                         for (Object result : results) {
-                            if (((ValidationResult) result).status() == SUCCESS) {
+                            if (((ValidationResult) result).status() == ValidationResult.ValidationStatus.SUCCESS) {
                                 return ValidatorPredicate.resultFor(view, true);
                             }
                         }
