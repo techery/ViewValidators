@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.techery:ViewValidators:0.1.1'
+    compile 'com.github.techery:ViewValidators:0.1.2'
     ...
 }
 ```
